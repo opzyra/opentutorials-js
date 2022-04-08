@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>전역변수의 사용</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // 익명의 함수 = > 모듈화, 콜백함수
+    (function(){
+      var MYAPP = {};
+      MYAPP.calculator = {
+        'left' : null,
+        'right' : null,
+        'sum' : function(){
+          return this.right - this.left;
+        }
+      };
+      MYAPP.coordinate = {
+        'left' : null,
+        'right' : null
+      };
+
+      MYAPP.calculator.left = 10;
+      MYAPP.calculator.right = 20;
+      function sum(){
+        return MYAPP.calculator.left + MYAPP.calculator.right;
+      };
+      document.write(sum() + "</br>");
+      document.write(MYAPP.calculator.sum());
+    }());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>상속 inheritance</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        객체명.prototype = new 부모의 생성자();
+      */
+      function Person(name){
+        this.name = name;
+        this.introduce = function(){
+          return 'My name is ' + this.name;
+        }
+      }
+      function Programmer(name){
+        this.name = name;
+      }
+      Programmer.prototype = new Person();
+      Programmer.prototype.coding = function(){
+        return "Hello World";
+      }
+      
+      function Designer(name){
+        this.name = name;
+      }
+
+      Designer.prototype = new Person();
+      Designer.prototype.design = function(){
+        return "beautiful!";
+      }
+      var p1 = new Programmer('egoing');
+      document.write(p1.introduce() + '</br>');
+      document.write(p1.coding() + '</br>');
+
+      var p2 = new Designer('leezche');
+      document.write(p2.introduce() + '</br>');
+      document.write(p2.design());
+    </script>
+  </body>
+</html>

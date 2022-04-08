@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>유효범위의 대상(함수)</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    /*
+      자바는 블록 {} 안에서만 유효범위를 제공하지만
+      자바스크립트에서는 블록{}안의 값은 전역변수의 의미를 지닌다.
+    */
+    for(var i = 0; i< 1; i++){
+      var name = 'coding everybody';
+    }
+    alert(name);
+    </script>
+  </body>
+</html>

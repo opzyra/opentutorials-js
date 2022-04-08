@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery-3.2.1.js"></script>
+    <title>함수의 호출</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        함수 = > 객체
+        객체 - 속성, 메소드
+        func.apply , func.call = >
+      */
+      function func(){
+
+      }
+      func();
+
+      function sum(arg1, arg2){
+        return arg1 + arg2;
+      }
+      sum.apply // 내장된 코드
+      sum.apply(null, [1,2]);
+      
+    </script>
+  </body>
+</html>

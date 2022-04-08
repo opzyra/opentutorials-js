@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>유효범위</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var vscope = 'global';
+      function fscope(){
+        // var vscope = 'local';
+        // vscope = 'local variables';
+        // 함수 안에서 전역변수의 값을 변경해주면 그 내용이 반영된다.
+        alert(vscope);
+        // 함수 안에서 밖에 있는 변수로 접근이 가능하다.
+        // 자기자신에게서 가까운 변수에 접근한다.
+        // 자바스크립트는 지역변수에 해당 값이 정의되어 있지 않다면
+        // 전역변수에서 찾아 사용한다.
+        // 지역변수 우선??
+      }
+      function fscope2(){
+        alert(vscope);
+      }
+      fscope();
+      /*
+      전역변수를 사용하면 프로그램내에서 변수가 공유되기 떄문에, 이름의 충돌을 회피하기 위해
+      지역변수를 사용하는것이 좋다.
+      */
+    </script>
+  </body>
+</html>

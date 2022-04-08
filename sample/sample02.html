@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>성적처리 프로그램</title>
+  </head>
+  <body id ='body'>
+      <script>
+        var name = prompt("성명을 입력해주세요.");
+        var student = {'국어':0, '영어':0, '수학':0, '합계':0, '평균':0};
+        for(key in student){
+          if(key == '합계') break;
+          do{
+            var score = parseInt(prompt(name + "님의 " + key + "성적을 입력해주세요."));
+          }while(score > 100 || score < 0);
+          student[key] = score;
+          student['합계'] += score;
+        }
+        student['평균'] = student['합계'] / 3;
+        var avg = student['평균']/10;
+        switch(Math.ceil(avg)){
+          case 10:
+          case 9: var grade = 'A'; break;
+          case 8: var grade = 'B'; break;
+          case 7: var grade = 'C'; break;
+          case 6: var grede = 'D'; break;
+          default : var grade = 'F';
+        }
+        // alert('합계 = ' + student['합계'] + '\n평균 = ' + student['평균'] + '\n학점 = ' + grade);
+        document.getElementById('body').innerHTML = '이름 : ' + name + '</br>국어성적 : ' +
+        student['국어'] + '</br>영어성적 : ' + student['영어'] + '</br>수학성적 : ' + student['수학'] + '</br>합계 : '
+        + student['합계'] + '</br>평균 : ' + student['평균'] + '</br>학점 : ' + grade;
+      </script>
+  </body>
+</html>

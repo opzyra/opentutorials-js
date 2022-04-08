@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>성적처리 프로그램</title>
+  </head>
+  <body>
+      <p>성적처리 프로그램</p>
+      <p>국어 : <input type="text" id="kor"></p>
+      <p>영어 : <input type="text" id="eng"></p>
+      <p>수학 : <input type="text" id="math"></p>
+      <p>합계 : <input type="text" id="sum"></p>
+      <p>평균 : <input type="text" id="avg"></p>
+      <button id="action" value="처리">처리</button>
+      <script>
+
+        document.getElementById('action').addEventListener('click', function(){
+          var calculator = {
+            'title' : {'kor':0, 'eng':0, 'math':0},
+            'cal' : function(){
+              var sum = 0;
+              for(key in this.title){
+                this.title[key] = document.getElementById(key).value;
+                sum += parseInt(this.title[key]);
+              }
+              return sum;
+            }
+          };
+
+          var sum = calculator.cal();
+          var avg = sum/3;
+          document.getElementById('sum').value = sum;
+          document.getElementById('avg').value = avg;
+        });
+
+      </script>
+  </body>
+</html>

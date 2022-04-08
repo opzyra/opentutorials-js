@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      Object.prototype.contain = function(needle){
+        for(var name in this){
+          if(this[name] === needle){
+            return true;
+          }
+        }
+        return false;
+      };
+
+      var o = {'name':'egoing', 'city':'seoul'};
+      console.log(o.contain('egoing'));
+      var a = ['egoing', 'leezch','grapittie'];
+      console.log(a.contain('leezch'));
+
+      for(var name in a){
+          if(a.hasOwnProperty(name)){
+            //자기 자신의 property값인 경우 true반환
+            //상속을 받은 property값인 경우 false반환
+            document.writeln(name);
+          }
+          
+      };
+    </script>
+  </body>
+</html>

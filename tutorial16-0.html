@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>값으로서의 함수와 콜백</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //javascript에서는 함수도 객체이다. 즉, 함수자체가 값이 될 수 있다.
+      //함수가 값 즉, 변수가 된다.
+      function a(){};
+      a = {
+        'b': function(){
+          //함수는 객체안에 저장될 수 있다.
+          //a속에 있는 b속성의 function은 메서드라고 부른다.
+        }
+      };
+
+      function cal(func, num){
+        return func(num);
+      };
+
+      function increase(num){
+        return num + 1;
+      };
+
+      function decrease(num){
+        return num - 1;
+      };
+
+      document.write(cal(increase, 1));
+      document.write("</br>");
+      document.write(cal(decrease, 1));
+
+    </script>
+  </body>
+</html>

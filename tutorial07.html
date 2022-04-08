@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>조건문</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // if
+      if(true){
+        document.write("result = true");
+      }
+
+      if(false){
+        document.write("result = false");
+      }
+      document.write("</br>");
+      // if~else
+      if(true){
+        document.write("result = true");
+      }else{
+        document.write("result = false");
+      }
+
+      // 조건문의 응용
+      var id = prompt('아이디를 입력해주세요.');
+      var password = prompt('비밀번호를 입력해주세요.');
+      if(id === 'egoing' && password === '1111'){
+        alert(id + "님 환영합니다.!");
+      }else{
+        alert('인증에 실패하였습니다.');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery-3.2.1.js"></script>
+    <title>매개변수의 수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+
+      */
+      function zero(){
+        console.log(
+          'zero.length', zero.length,
+          'arguments', arguments.length
+        );
+      }
+      zero();
+
+      function one(arg1){
+        console.log(
+          'one.length', one.length,
+          'arguments', arguments.length
+        );
+      }
+      one('var1', 'var2');
+
+      function two(arg1, arg2){
+        console.log(
+          'one.length', one.length,
+          'arguments', arguments.length
+        );
+      }
+
+    </script>
+  </body>
+</html>

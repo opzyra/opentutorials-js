@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery-3.2.1.js"></script>
+    <title>클로저 응용</title>
+    <style>
+      body{
+        font-family: sans-serif, sans-serif;
+        font-size: 12px;
+      }
+
+      h1{
+        font-size: 1.5em;
+      }
+
+      h2{
+        font-size: 1.2em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function makeSizer(size){
+        return function(){
+          document.body.style.fontSize = size + 'px';
+        };
+      }
+
+      var size12 = makeSizer(12);
+      var size14 = makeSizer(14);
+      var size16 = makeSizer(16);
+    </script>
+
+    바디의 글씨크기입니다.
+    <h1>h1의 크기입니다.</h1>
+    <h2>h2의 크기입니다.</h2>
+  </body>
+</html>

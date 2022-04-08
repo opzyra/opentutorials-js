@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>데이터 타입</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        원시데이터 타입 vs 객체데이터 타입
+        기본              참조
+
+        원시 데이터 타입
+        숫자 - > Number
+        문자 - > String
+        불린(T/F) - > Boolean
+        null - > x
+        undefined - > x
+      */
+      var str = 'coding';
+      // str = new String('coding');
+      // 자바와 동일하다!
+      // wrapper object
+      console.log(str.length);
+      console.log(str.charAt(0));
+      //. >> object access operator 객체 접근 연산자
+      // 자바스크립트에서 문자 원시데이터 타입은 객체로서 사용할땐 임시로 객체화 한다.
+
+      str.prop = 'everybody'; // wrapper object
+      console.log(str.prop);
+    </script>
+  </body>
+</html>

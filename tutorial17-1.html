@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery-3.2.1.js"></script>
+    <title>클로저</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function outter(){
+      var title = 'codding everybody';
+      return function(){
+        alert(title);
+        // 내부함수에서 외부함수에 접근한 데이터
+      }
+    }
+    var inner = outter(); //outter의 함수가 리턴해준 함수를 inner에 담는다.
+    inner();
+    </script>
+  </body>
+</html>

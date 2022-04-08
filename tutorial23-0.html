@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>상속 inheritance</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        로직의 재활용이 용이하다.
+      */
+      // function Person(name){
+      //   this.name = name;
+      //   this.introduce = function(){
+      //     return 'My name is ' + this.name;
+      //   }
+      // }
+      // var p1 = new Person('egoing');
+      // document.writeln(p1.introduce());
+
+      function Person(name){
+        this.name = name;
+      }
+      Person.prototype.name = null;
+      Person.prototype.introduce = function(){
+        return 'My name is ' + this.name;
+      }
+
+      function Programmer(name){
+        this.name = name;
+      }
+
+      Programmer.prototype = new Person();
+      //객체.prototype = new 부모생성자();
+
+      var p1 = new Programmer('egoing');
+      document.writeln(p1.introduce());
+
+    </script>
+  </body>
+</html>

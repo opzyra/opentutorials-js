@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>전역객체</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        전역객체란? Global object는 특수한 객체이다. 모든 객체는 이 전역객체의 프로퍼티다.
+        window
+      */
+      function func(){
+        alert('Hello?');
+      }
+      window.func();
+
+      var o = {
+        func : function(){
+          alert('Hello?');
+        }
+      }
+      o.func();
+      window.o.func(); // nodejs 에서는 global이다.
+    </script>
+  </body>
+</html>

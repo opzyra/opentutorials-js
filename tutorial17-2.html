@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery-3.2.1.js"></script>
+    <title>클로저</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function factory_movie(title){
+        //title 변수는 get_title, set_title를 통해서만 접근 가능하다.
+        //소프트웨어가 커지다보면 많은 사람이 코드를 수정한다.
+        //private 접근지정자를 통해 보호한다.
+        return {
+          get_title : function(){
+            return title;
+          },
+          set_title : function(_title){
+            if(typeof _title === 'String'){
+              title = _title;  //유효성 검사
+            }else{
+              alert('제목은 문자열이여야합니다.');
+            }
+
+          }
+        }
+        // 정보은닉화?! getter와 setter의 의미
+      }
+      var ghost = factory_movie('Ghost in the shell');
+      var matrix = factory_movie('Matrix');
+
+      alert(ghost.get_title());
+      alert(matrix.get_title());
+      ghost.set_title(1);
+
+      alert(ghost.get_title());
+      alert(matrix.get_title());
+    </script>
+  </body>
+</html>

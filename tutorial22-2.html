@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this apply, call</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+        this는 함수내에서 함수 로출 맥락(context)를 의미한다.
+        맥락은 상황에 따라 달라지는것을 의미하는것인다. 즉, 함수를 어떻게 호출하느냐에 따라서 this
+        가리키는 대상이 달라진다는 뜻이다. 함수와 객체의 관계가 느슨한 자바스크립트에서 this는 이 둘을 연결시켜주는
+        실직적인 연결점의 역할을 한다.
+
+        함수안에서 this는 그 함수가 속해있는 객체를 의미한다.
+      */
+      var o = new Object;
+      var p = new Object;
+      function func(){
+        switch(this){
+          case o:
+            document.write('o</br>');
+            break;
+          case p:
+            document.write('p</br>');
+            break;
+          case window:
+            document.write('window</br>');
+            break;
+        }
+      }
+      func();
+      func.apply(o);
+      func.apply(p);
+    </script>
+  </body>
+</html>

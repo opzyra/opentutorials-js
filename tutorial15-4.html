@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>정적 유효범위</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 자바스크립트는 함수가 선언된 시점에서 유효범위를 갖는다. 이러한 유효범위의 방식을
+      // 정적유효범위(static scopting) 혹은 렉시컬(lexical scopting)이라고 한다.
+
+      var i = 5; // 전역변수
+
+      function a(){
+        var i = 10; // 지역변수
+        b();
+      }
+
+      // 함수가 선언된 시점에서 전역변수를 찾는다.
+      //
+      function b(){
+        document.write(i);
+      }
+
+      a();
+
+    </script>
+  </body>
+</html>
